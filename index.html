@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dementia Prediction Based on the Lifestyle factors</title>
+    <style>
+        /* Adding CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            color: #333; /* Dark gray text color */
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            color: #007bff; /* Blue header color */
+            text-align: center; /* Center-align the text */
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff; /* White background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Shadow effect */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666; /* Dark gray label color */
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px;
+            background-color: #f9f9f9; /* Light gray background */
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff; /* Blue submit button color */
+            color: #fff; /* White text color */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Dementia Prediction Based on Lifestyle Factors</h2>
+    <p>Fill in the following information to predict the likelihood of dementia using machine learning:</p>
+    <form method="POST" action="{{url_for('predict')}}">
+        <label for="Sleep_Quality">Sleep Quality:</label>
+        <select id="Sleep_Quality" name="Sleep_Quality">
+            <option value="Good">Good</option>
+            <option value="Poor">Poor</option>
+        </select><br>
+
+
+        <label for="Diabetic">Diabetic:</label>
+        <select id="Diabetic" name="Diabetic">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="Depression_Status">Depression Status:</label>
+        <select id="Depression_Status" name="Depression_Status">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+
+        <label for="Medication_History">Medication History:</label>
+        <select id="Medication_History" name="Medication_History">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+
+        <label for="Education_Level">Education Level:</label>
+        <select id="Education_Level" name="Education_Level">
+            <option value="Diploma/Degree">Diploma/Degree</option>
+            <option value="No School">No School</option>
+            <option value="Primary School">Primary School</option>
+            <option value="Secondary School">Secondary School</option>
+        </select><br>
+
+        <label for="Nutrition_Diet">Nutrition Diet:</label>
+        <select id="Nutrition_Diet" name="Nutrition_Diet">
+            <option value="Balanced Diet">Balanced Diet</option>
+            <option value="Low-Carb Diet">Low-Carb Diet</option>
+            <option value="Mediterranean Diet">Mediterranean Diet</option>
+        </select><br>
+
+        <label for="Smoking_Status">Smoking Status:</label>
+        <select id="Smoking_Status" name="Smoking_Status">
+            <option value="Current Smoker">Current Smoker</option>
+            <option value="Former Smoker">Former Smoker</option>
+            <option value="Never Smoked">Never Smoked</option>
+        </select><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dementia Prediction</title>
+    <style>
+        /* Adding CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            color: #333; /* Dark gray text color */
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Center-align all content */
+        }
+        .result-box {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 5px;
+            background-color: #fff; /* White background */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Shadow effect */
+        }
+        h2 {
+            color: #007bff; /* Blue header color */
+        }
+        .positive {
+            color: #28a745; /* Green color for positive prediction */
+        }
+        .negative {
+            color: #dc3545; /* Red color for negative prediction */
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Dementia Prediction Result</h2>
+        {% if prediction == 1 %}
+            <p class="positive">Based on the provided lifestyle factors, the prediction indicates a <strong>positive</strong> likelihood of dementia.</p>
+        {% else %}
+            <p class="negative">Based on the provided lifestyle factors, the prediction indicates a <strong>negative</strong> likelihood of dementia.</p>
+        {% endif %}
+        <p>Prediction Probability: {{ prediction_probability }}</p>
+    </div>
+</body>
+</html>
